@@ -1,0 +1,31 @@
+// This file is part of the materials accompanying the book 
+// "The Elements of Computing Systems" by Nisan and Schocken, 
+// MIT Press. Book site: www.idc.ac.il/tecs
+// File name: projects/05/Or15.hdl
+
+/**
+ * 15-bit Or gate.  For i=0..15 out[i] = a[i] or b[i]
+ */
+
+CHIP Cut15 {
+
+    IN  in[16];
+    OUT out[15];
+
+    PARTS:
+      L(in=in[0], out=out[0]);
+      L(in=in[1], out=out[1]);
+      L(in=in[2], out=out[2]);
+      L(in=in[3], out=out[3]);
+      L(in=in[4], out=out[4]);
+      L(in=in[5], out=out[5]);
+      L(in=in[6], out=out[6]);
+      L(in=in[7], out=out[7]);
+      L(in=in[8], out=out[8]);
+      L(in=in[9], out=out[9]);
+      L(in=in[10], out=out[10]);
+      L(in=in[11], out=out[11]);
+      L(in=in[12], out=out[12]);
+      L(in=in[13], out=out[13]);
+      L(in=in[14], out=out[14]);
+}

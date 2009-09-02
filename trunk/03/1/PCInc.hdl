@@ -1,0 +1,25 @@
+// This file is part of the materials accompanying the book 
+// "The Elements of Computing Systems" by Nisan and Schocken, 
+// MIT Press. Book site: www.idc.ac.il/tecs
+// File name: projects/03/1/PCInc.hdl
+
+/**
+ * 16-bit counter with load and reset controls.
+ *
+ * if inc(t-1) then out(t) = out(t-1) + 1 (integer addition)
+ * else out(t) = out(t-1)
+ */
+
+CHIP PCInc {
+
+    IN  in[16], inc;
+    OUT out[16];
+
+    PARTS:
+		 Not(in=inc, out=i);
+		 Register(in=in, load=i, out=io);
+		 Inc16(in=io, out=iio);
+		 
+		 Mux16(a=in, b=iio, sel=inc, out=out);
+		 
+}
