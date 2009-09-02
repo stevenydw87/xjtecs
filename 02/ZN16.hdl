@@ -1,0 +1,45 @@
+// This file is part of the materials accompanying the book 
+// "The Elements of Computing Systems" by Nisan and Schocken, 
+// MIT Press. Book site: www.idc.ac.il/tecs
+// File name: projects/02/ZN16.hdl
+// created by Xin Jia for projects/02/ALU.hdl
+
+/**
+ * Zero and Not input. The ALU component. Compute zero and Not value
+ * of 16-bit input. The function is used by a set of 5 control bits 
+ * denoted zx, nx, zy, ny no.
+ * The ZN operation can be described using the following pseudocode:
+ *     if z=1 set out = 0       // 16-bit zero constant
+ *     if n=1 set out = !in     // Bit-wise negation
+ */
+
+CHIP ZN16 {
+
+    IN  // 16-bit inputs:
+        in[16],
+        // Control bits:
+        z, // Zero the x input
+        n; // Negate the x input
+
+    OUT // 16-bit output
+        out[16];
+
+    PARTS:
+     ZN(in=in[0], z=z, n=n, out=out[0]);
+     ZN(in=in[1], z=z, n=n, out=out[1]);
+     ZN(in=in[2], z=z, n=n, out=out[2]);
+     ZN(in=in[3], z=z, n=n, out=out[3]);
+     ZN(in=in[4], z=z, n=n, out=out[4]);
+     ZN(in=in[5], z=z, n=n, out=out[5]);
+     ZN(in=in[6], z=z, n=n, out=out[6]);
+     ZN(in=in[7], z=z, n=n, out=out[7]);
+     ZN(in=in[8], z=z, n=n, out=out[8]);
+     ZN(in=in[9], z=z, n=n, out=out[9]);
+     ZN(in=in[10], z=z, n=n, out=out[10]);
+     ZN(in=in[11], z=z, n=n, out=out[11]);
+     ZN(in=in[12], z=z, n=n, out=out[12]);
+     ZN(in=in[13], z=z, n=n, out=out[13]);
+     ZN(in=in[14], z=z, n=n, out=out[14]);
+     ZN(in=in[15], z=z, n=n, out=out[15]);
+		 
+}

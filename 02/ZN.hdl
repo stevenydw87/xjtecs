@@ -1,0 +1,32 @@
+// This file is part of the materials accompanying the book 
+// "The Elements of Computing Systems" by Nisan and Schocken, 
+// MIT Press. Book site: www.idc.ac.il/tecs
+// File name: projects/02/ZN.hdl
+// created by Xin Jia for projects/02/ZN16.hdl
+
+/**
+ * Zero and Not input. The ALU component. Compute zero and Not value
+ * of 1-bit input. The function is used by a set of 5 control bits 
+ * denoted zx, nx, zy, ny no.
+ * The ZN operation can be described using the following pseudocode:
+ *     if z=1 set out = 0       // 1-bit zero constant
+ *     if n=1 set out = !in     // Bit-wise negation
+ */
+
+CHIP ZN {
+
+    IN  // 1-bit inputs:
+        in,
+        // Control bits:
+        z, // Zero the x input
+        n;// Negate the x input
+
+    OUT // 1-bit output
+        out;
+
+    PARTS:
+     Not(in=z, out=nz);
+		 And(a=nz, b=in, out=zi);
+		 Xor(a=zi, b=n, out=out);
+		 
+}
